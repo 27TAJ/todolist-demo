@@ -1,0 +1,52 @@
+Chat transcript for todolist-demo session
+
+2026-04-25T22:49:38-04:00 USER:
+Analyze this codebase and create a .github/copilot-instructions.md file to help future Copilot sessions work effectively in this repository.
+(Instructions: include build/test/lint commands, high-level architecture, key conventions; integrate existing docs; check for other AI assistant configs; ask about MCP servers; create file.)
+
+ASSISTANT:
+Exploring repository files to gather README, package.json, main UI files, and any existing assistant configs to craft copilot instructions.
+
+ASSISTANT:
+Created .github/copilot-instructions.md with repository-specific build/run commands, architecture, and conventions. Asked whether to configure an MCP server for Playwright. (User chose: No, not now.)
+
+2026-04-25T22:55:56-04:00 USER:
+I want you to implement a feature of my choosing to my todo list application
+
+ASSISTANT:
+Presented a list of feature options to choose from.
+
+USER:
+I want to attach a due date to a todo, optional at creation and editable later. When set it appears next to the todo.
+
+ASSISTANT:
+Implementing due-date feature: added dueDate state and input, persisted on add, added editing flow (Edit → change text/date → Save/Cancel), display due date next to todo when set. Built successfully. (Changed src/App.jsx)
+
+USER:
+Where did ToDoList-2.jsx come from, I just want one jsx file named todolist.jsx
+
+ASSISTANT:
+Renamed src/App.jsx to src/todolist.jsx, updated imports in src/main.jsx, removed ToDoList-2.jsx, rebuilt.
+
+USER:
+Can you rename it to TodoList.jsx
+
+ASSISTANT:
+Renamed src/todolist.jsx → src/TodoList.jsx, updated main.jsx import, rebuilt.
+
+USER:
+I want the todo due date to appear next to the todo task when it is not completed
+
+ASSISTANT:
+Updated src/TodoList.jsx to show due date only when todo is not completed and not being edited. Fixed JSX syntax error that appeared during build. Rebuilt successfully.
+
+USER:
+The due date still isn't showing next to the task when it's not in the edit mode.
+
+ASSISTANT:
+Inspected src/TodoList.jsx, moved the due-date span outside the toggle button and ensured it renders when !todo.done && todo.dueDate && editingId !== todo.id. Fixed mismatched JSX braces. Built successfully.
+
+2026-04-25T23:51:10-04:00 USER:
+Can you give me a file to download with this chat history?
+
+--- End of transcript ---
